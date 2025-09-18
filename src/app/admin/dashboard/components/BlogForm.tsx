@@ -31,7 +31,7 @@ export default function BlogFormComponent() {
   }, []);
 
   const fetchBlogs = async () => {
-    const res = await fetch("/api/blog");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`);
     const data = await res.json();
     setBlogs(data);
   };
@@ -39,10 +39,10 @@ export default function BlogFormComponent() {
   const uploadToImgBB = async (file: File) => {
     const formData = new FormData();
     formData.append("image", file);
-    const res = await fetch(
-      `${process.env.IMG_DB}`,
-      { method: "POST", body: formData }
-    );
+    const res = await fetch(`${process.env.IMG_DB}`, {
+      method: "POST",
+      body: formData,
+    });
     const data = await res.json();
     return data.data?.url || "";
   };
@@ -54,7 +54,7 @@ export default function BlogFormComponent() {
     let imageUrl = "";
     if (image) imageUrl = await uploadToImgBB(image);
 
-    const res = await fetch("/api/blog", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, image: imageUrl, content }),

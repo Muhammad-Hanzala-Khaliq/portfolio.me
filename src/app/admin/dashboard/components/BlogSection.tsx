@@ -21,7 +21,7 @@ export default function BlogSection() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch("/api/blog");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`);
         const data = await res.json();
         setBlogs(data);
       } catch (error) {
@@ -37,12 +37,15 @@ export default function BlogSection() {
   // Delete Blog
   const handleDelete = async (slug: string) => {
     try {
-      const res = await fetch(`/api/blog/${slug}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_UR}/api/blog/${slug}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       if (res.ok) {
-      setBlogs((prev) => prev.filter((blog) => blog.slug !== slug));
+        setBlogs((prev) => prev.filter((blog) => blog.slug !== slug));
       } else {
         console.error("Failed to delete blog");
       }
@@ -67,16 +70,19 @@ export default function BlogSection() {
               className="bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               {/* Link Wraps Card (excluding delete button) */}
-              <Link href={`/blog/${blog.slug}`} className="flex-1 flex flex-col">
+              <Link
+                href={`${process.env.NEXT_PUBLIC_BASE_UR}/blog/${blog.slug}`}
+                className="flex-1 flex flex-col"
+              >
                 {/* Image */}
                 {blog.image && (
                   <Image
-    src={blog.image}
-    alt={blog.title}
-    width={400} // ya appropriate width
-    height={208} // h-52 equivalent
-    className="object-cover w-full h-52"
-  />
+                    src={blog.image}
+                    alt={blog.title}
+                    width={400} // ya appropriate width
+                    height={208} // h-52 equivalent
+                    className="object-cover w-full h-52"
+                  />
                 )}
 
                 {/* Content */}
