@@ -38,7 +38,7 @@ export default function BlogSection() {
   const handleDelete = async (slug: string) => {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_UR}/api/blog/${slug}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${slug}`,
         {
           method: "DELETE",
         }
