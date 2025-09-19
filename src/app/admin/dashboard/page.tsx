@@ -12,7 +12,9 @@ export default function DashboardPage() {
   useEffect(() => {
     if (activeSection === "messages") {
       const fetchMessages = async () => {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`);
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/contact`
+        );
         const data = await res.json();
         setMessages(data);
       };

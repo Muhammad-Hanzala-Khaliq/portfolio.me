@@ -14,11 +14,11 @@ export default function MessagesSection({ messages }: { messages: ContactMessage
           messages.map((msg, idx) => (
             <div
               key={idx}
-              className="bg-gray-700 p-3 rounded-lg border border-gray-600 mr-1"
+              className="bg-heading p-3 rounded-lg border border-gray-600 mr-1"
             >
               <p className="font-semibold">Email: {msg.email}</p>
-              <p className="text-gray-300 text-sm mt-1">Message: {msg.message}</p>
-              <p className="text-xs text-gray-400 mt-1">
+              <p className="text-white text-sm mt-1">Message: {msg.message}</p>
+              <p className="text-xs text-white mt-1">
                 {new Date(msg.createdAt).toLocaleString()}
               </p>
             </div>
