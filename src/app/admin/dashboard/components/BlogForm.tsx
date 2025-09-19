@@ -39,7 +39,7 @@ export default function BlogFormComponent() {
   const uploadToImgBB = async (file: File) => {
     const formData = new FormData();
     formData.append("image", file);
-    const res = await fetch(`${process.env.IMG_DB}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_IMG_DB}`, {
       method: "POST",
       body: formData,
     });
