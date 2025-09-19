@@ -15,33 +15,28 @@ const FreeCodeCamp = () => {
     {
       id: 1,
       href: "https://www.freecodecamp.org/news/build-smart-expense-tracker-with-python-and-llms/",
-      imgSrc:
-        "/free-code-camp-1.webp",
+      imgSrc: "/freecodecamp-1.webp",
       date: "September 8, 2025",
-      title:
-        "How to Build a Smart Expense Tracker with Python and LLMs",
+      title: "How to Build a Smart Expense Tracker with Python and LLMs",
     },
     {
       id: 2,
       href: "https://www.freecodecamp.org/news/how-to-enhance-images-with-neural-networks/",
-      imgSrc:
-        "/free-code-camp-2.png",
+      imgSrc: "/freecodecamp-2.webp",
       date: "September 4, 2025",
       title: "How to Enhance Images with Neural Networks",
     },
     {
       id: 3,
       href: "https://www.freecodecamp.org/news/caching-a-nextjs-api-using-redis-and-sevalla/",
-      imgSrc:
-        "/free-code-camp-3.webp",
+      imgSrc: "/freecodecamp-3.png",
       date: "August 27, 2025",
       title: "Caching a Next.js API using Redis and Sevalla",
     },
     {
       id: 4,
       href: "https://www.freecodecamp.org/news/how-to-deploy-a-kubernetes-app-on-aws-eks/",
-      imgSrc:
-        "/free-code-camp-4.png",
+      imgSrc: "/freecodecamp-4.webp",
       date: "August 22, 2025",
       title: "How to Deploy a Kubernetes App on AWS EKS",
     },
