@@ -19,9 +19,10 @@ export default function BlogPageClient() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`, {
-          cache: "no-store",
-        });
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`,
+          { next: { revalidate: 3600 } }
+        );
         const data = await res.json();
         setBlogs(data);
       } catch (err) {
